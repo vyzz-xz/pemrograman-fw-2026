@@ -32,6 +32,14 @@ Repository ini berisi dokumentasi dan hasil praktikum mata kuliah **Framework Pe
 * Pembuatan `DashboardController` via Artisan command
 * Pengecekan daftar rute menggunakan `php artisan route:list`
 
+### Pertemuan 3 – Environment, Migration & Database POS
+* Konfigurasi file `.env` untuk koneksi database MySQL (`pos_toko`)
+* Memahami konsep Migration sebagai *version control* untuk struktur database
+* Memodifikasi tabel bawaan (`users`) dengan menambahkan kolom `role` menggunakan `Schema::table`
+* Pembuatan tabel master dan transaksi (`categories`, `products`, `transactions`, `transaction_details`) menggunakan `Schema::create`
+* Implementasi relasi antar tabel (Foreign Key & `cascadeOnDelete`)
+* Pengenalan pembuatan Seeder (`CategorySeeder`) untuk *generate* data awal
+
 *(Materi pertemuan selanjutnya akan ditambahkan di sini)*
 
 ---

@@ -40,6 +40,14 @@ Repository ini berisi dokumentasi dan hasil praktikum mata kuliah **Framework Pe
 * Implementasi relasi antar tabel (Foreign Key & `cascadeOnDelete`)
 * Pengenalan pembuatan Seeder (`CategorySeeder`) untuk *generate* data awal
 
+### Pertemuan 4 – Login Manual dan Otorisasi Bertingkat
+* Memahami konsep dan perbedaan antara otentikasi (login) dan otorisasi (hak akses)
+* Membangun proses otentikasi manual menggunakan `Auth` facade bawaan Laravel tanpa *starter kit*
+* Pembuatan `LoginController` untuk menangani proses login (`Auth::attempt`) dan validasi sesi logout
+* Pembuatan *custom middleware* `CheckRole` untuk membatasi akses rute berdasarkan *role* pengguna
+* Penerapan otorisasi bertingkat (Admin & Kasir) menggunakan Route Grouping dan mendaftarkan *middleware alias* di `bootstrap/app.php`
+* Pembaruan `DatabaseSeeder` untuk men- *generate* akun percobaan Admin dan Kasir menggunakan enkripsi `Hash::make`
+
 *(Materi pertemuan selanjutnya akan ditambahkan di sini)*
 
 ---

@@ -16,6 +16,13 @@
                     <p>
                         Selamat datang, {{ auth()->user()->name }}.
                     </p>
+
+                    <div class="mt-4 space-x-2">
+                        <span>Contoh Label Stok:</span>
+                        <x-badge type="aman">Aman</x-badge>
+                        <x-badge type="menipis">Menipis</x-badge>
+                        <x-badge type="habis">Habis</x-badge>
+                    </div>
                 </div>
             </div>
         </div>

@@ -48,6 +48,13 @@ Repository ini berisi dokumentasi dan hasil praktikum mata kuliah **Framework Pe
 * Penerapan otorisasi bertingkat (Admin & Kasir) menggunakan Route Grouping dan mendaftarkan *middleware alias* di `bootstrap/app.php`
 * Pembaruan `DatabaseSeeder` untuk men- *generate* akun percobaan Admin dan Kasir menggunakan enkripsi `Hash::make`
 
+### Pertemuan 5 – Blade Templating dan Membangun Layout Dashboard
+* Memahami sintaks dasar templating engine Blade (`{{ }}`, `@if`, `@foreach`) untuk menampilkan data secara dinamis tanpa *starter kit*.
+* Membangun *master layout* aplikasi (`app-layout.blade.php`) secara mandiri menggunakan fitur Anonymous Component dan manipulasi variabel `$slot`.
+* Pembuatan *reusable component* seperti `<x-card>` untuk pembungkus konten dan `<x-badge>` yang memanfaatkan *array props* untuk merender warna status stok secara dinamis.
+* Implementasi navigasi dinamis (`navigation.blade.php`) yang menyembunyikan atau menampilkan tautan menu tertentu (seperti Riwayat Transaksi atau Data Master) berdasarkan *role* pengguna yang sedang *login*.
+* Penerapan standar keamanan web dengan membungkus tombol *logout* menggunakan form ber-metode `POST` dan menyematkan token `@csrf` untuk mencegah kerentanan *Cross-Site Request Forgery* (CSRF). 
+
 *(Materi pertemuan selanjutnya akan ditambahkan di sini)*
 
 ---

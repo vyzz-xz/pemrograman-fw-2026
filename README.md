@@ -55,6 +55,14 @@ Repository ini berisi dokumentasi dan hasil praktikum mata kuliah **Framework Pe
 * Implementasi navigasi dinamis (`navigation.blade.php`) yang menyembunyikan atau menampilkan tautan menu tertentu (seperti Riwayat Transaksi atau Data Master) berdasarkan *role* pengguna yang sedang *login*.
 * Penerapan standar keamanan web dengan membungkus tombol *logout* menggunakan form ber-metode `POST` dan menyematkan token `@csrf` untuk mencegah kerentanan *Cross-Site Request Forgery* (CSRF). 
 
+### Pertemuan 6 – Model Eloquent dan Relasi Antar Tabel
+* Memahami konsep dasar ORM (*Object-Relational Mapping*) menggunakan fitur Eloquent bawaan Laravel.
+* Membuat kelas Model (`Category`, `Product`, `Transaction`, `TransactionDetail`) secara konsisten menggunakan perintah Artisan.
+* Menerapkan perlindungan keamanan *Mass Assignment Vulnerability* dengan mendaftarkan kolom yang diizinkan pada properti `$fillable`.
+* Mendefinisikan relasi antar tabel *database* ke dalam logika aplikasi menggunakan *method* `hasMany` dan `belongsTo`.
+* Membuat *Accessor* kustom (`getPriceRupiahAttribute`) pada Model untuk memanipulasi format *output* data (seperti format mata uang) secara otomatis.
+* Menguji pembuatan data dan eksekusi relasi Model secara langsung dari terminal menggunakan fitur REPL **Tinker**.
+
 *(Materi pertemuan selanjutnya akan ditambahkan di sini)*
 
 ---

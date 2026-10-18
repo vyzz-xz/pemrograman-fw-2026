@@ -63,6 +63,14 @@ Repository ini berisi dokumentasi dan hasil praktikum mata kuliah **Framework Pe
 * Membuat *Accessor* kustom (`getPriceRupiahAttribute`) pada Model untuk memanipulasi format *output* data (seperti format mata uang) secara otomatis.
 * Menguji pembuatan data dan eksekusi relasi Model secara langsung dari terminal menggunakan fitur REPL **Tinker**.
 
+### Pertemuan 7 & 8 - Form Input, Validasi, dan Menampilkan Data (CRUD Dasar)
+* Membuat *Resource Controller* (`CategoryController`, `ProductController`) menggunakan perintah Artisan untuk menangani operasi CRUD (*Create, Read, Update, Delete*).
+* Menerapkan validasi *input* form secara langsung pada Controller maupun dengan membuat kelas *Form Request* terpisah (`StoreProductRequest`) agar kode lebih bersih dan terstruktur.
+* Merancang antarmuka form penambahan data (`create.blade.php`) menggunakan *Blade Component* dan *framework* Tailwind CSS, lengkap dengan penanganan *error validation* dan *old input*.
+* Menampilkan data dari *database* ke dalam bentuk tabel (`index.blade.php`) serta memanfaatkan fungsi *Pagination* (`paginate`) untuk membatasi jumlah data per halaman.
+* Mengoptimalkan kueri *database* menggunakan fitur *Eager Loading* (`with()`) guna mencegah masalah *N+1 Query* saat memanggil data yang berelasi antar tabel.
+* Menerapkan logika *conditional styling* pada *template* Blade (menggunakan *directive* `@if`, `@elseif`, `@else`) untuk memberikan indikator visual secara dinamis pada UI, seperti status stok produk (Aman, Menipis, Habis).
+
 *(Materi pertemuan selanjutnya akan ditambahkan di sini)*
 
 ---

@@ -17,6 +17,32 @@
                     </div>
                 @endif
 
+                {{-- Form Pencarian dan Filter Kategori --}}
+                <form method="GET" action="{{ route('products.index') }}" class="flex items-center gap-3 mb-4">
+                    
+                    <input type="text" name="search" value="{{ request('search') }}"
+                        placeholder="Cari nama atau kode produk..."
+                        class="flex-1 rounded-md border-gray-300 shadow-sm px-4 py-2 focus:border-indigo-500 focus:ring-indigo-500">
+
+                    <select name="category_id" class="rounded-md border-gray-300 shadow-sm px-4 py-2 focus:border-indigo-500 focus:ring-indigo-500">
+                        <option value="">Semua Kategori</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}" @selected(request('category_id') == $category->id)>
+                                {{ $category->name }}
+                            </option>
+                        @endforeach
+                    </select>
+
+                    <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md shadow-sm hover:bg-indigo-700 transition">
+                        Cari
+                    </button>
+                    
+                    <a href="{{ route('products.index') }}" class="px-4 py-2 text-gray-500 hover:bg-gray-100 rounded-md transition">
+                        Reset
+                    </a>
+                    
+                </form>
+
                 <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                         <tr>
@@ -49,6 +75,12 @@
                                 </td>
                                 <td class="px-4 py-2 text-sm text-center space-x-2">
                                     <a href="{{ route('products.edit', $product) }}" class="text-indigo-600">Ubah</a>
+                                    
+                                    <form action="{{ route('products.destroy', $product) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus produk {{ $product->name }}?')" class="inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-600">Hapus</button>
+                                    </form>
                                 </td>
                             </tr>
                         @empty

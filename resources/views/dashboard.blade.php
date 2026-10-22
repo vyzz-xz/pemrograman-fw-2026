@@ -4,27 +4,4 @@
             Dashboard
         </h2>
     </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <h3 class="text-lg font-semibold mb-4">
-                        Ringkasan Hari Ini
-                    </h3>
-
-                    <p>
-                        Selamat datang, {{ auth()->user()->name }}.
-                    </p>
-
-                    <div class="mt-4 space-x-2">
-                        <span>Contoh Label Stok:</span>
-                        <x-badge type="aman">Aman</x-badge>
-                        <x-badge type="menipis">Menipis</x-badge>
-                        <x-badge type="habis">Habis</x-badge>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </x-app-layout>

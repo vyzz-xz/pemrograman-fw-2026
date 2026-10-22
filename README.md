@@ -71,6 +71,15 @@ Repository ini berisi dokumentasi dan hasil praktikum mata kuliah **Framework Pe
 * Mengoptimalkan kueri *database* menggunakan fitur *Eager Loading* (`with()`) guna mencegah masalah *N+1 Query* saat memanggil data yang berelasi antar tabel.
 * Menerapkan logika *conditional styling* pada *template* Blade (menggunakan *directive* `@if`, `@elseif`, `@else`) untuk memberikan indikator visual secara dinamis pada UI, seperti status stok produk (Aman, Menipis, Habis).
 
+### Pertemuan 9 & 10 - Update, Delete, Search, Filter Kategori, dan Pagination (Lanjutan CRUD)
+* Mengimplementasikan fungsi Ubah (Edit/Update) data ke *database* menggunakan *method* `PUT`/`PATCH` pada *routing*.
+* Membuat dan mengonfigurasi *Form Request* khusus (`UpdateProductRequest`) untuk memisahkan logika validasi saat pengguna melakukan pembaruan data produk.
+* Mengimplementasikan fitur Hapus (Delete) data menggunakan *method* `DELETE` yang dilengkapi dengan konfirmasi JavaScript (Modal/Alert) untuk mencegah penghapusan data secara tidak sengaja.
+* Memahami dan menerapkan *Query Parameter* pada URL (seperti `?search=...&category_id=...`) untuk mengirim data tambahan tanpa menggunakan *session*.
+* Mengimplementasikan fitur pencarian produk secara dinamis berdasarkan Nama atau Kode produk menggunakan metode `where` dan `orWhere` dengan operator `like` di Eloquent ORM.
+* Membuat fitur filter data berdasarkan kategori menggunakan elemen *dropdown* `<select>` yang mempertahankan nilai pilihannya.
+* Menerapkan *Pagination* (`paginate()`) untuk membatasi jumlah baris data yang ditampilkan per halaman, serta menggunakan `withQueryString()` agar parameter pencarian dan filter tidak hilang saat pengguna berpindah halaman.
+
 *(Materi pertemuan selanjutnya akan ditambahkan di sini)*
 
 ---

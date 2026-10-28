@@ -80,6 +80,19 @@ Repository ini berisi dokumentasi dan hasil praktikum mata kuliah **Framework Pe
 * Membuat fitur filter data berdasarkan kategori menggunakan elemen *dropdown* `<select>` yang mempertahankan nilai pilihannya.
 * Menerapkan *Pagination* (`paginate()`) untuk membatasi jumlah baris data yang ditampilkan per halaman, serta menggunakan `withQueryString()` agar parameter pencarian dan filter tidak hilang saat pengguna berpindah halaman.
 
+### Pertemuan 11: Detail Produk dan Riwayat Penjualan per Produk
+- Mengimplementasikan method `show()` pada `ProductController` menggunakan *Route Model Binding*.
+- Menambahkan relasi bertingkat (*nested relation*) menggunakan *lazy eager loading* `load(['transactionDetails.transaction'])`.
+- Menerapkan agregasi data sederhana seperti `sum('qty')` untuk menghitung total unit produk yang terjual.
+- Membuat tampilan halaman detail produk (`show.blade.php`) lengkap dengan informasi harga, stok, total terjual, dan tabel 10 riwayat transaksi terakhir.
+
+### Pertemuan 12: Transaksi Penjualan (POS) - Keranjang dan Simpan Transaksi
+- Membangun layar kasir interaktif menggunakan **Alpine.js** untuk manajemen keranjang belanja, pencarian produk instan, perhitungan total, dan kembalian secara *real-time*.
+- Membuat `PosController` dan mendaftarkan rute POS yang dilindungi oleh *middleware* hak akses.
+- Menerapkan **`DB::transaction()`** dan **`lockForUpdate()`** untuk menjamin konsistensi data serta mencegah *race condition* pada stok produk saat transaksi bersamaan.
+- Membuat `StorePosRequest` dengan validasi *wildcard* (`items.*.product_id`) untuk memvalidasi data keranjang dari sisi server.
+- Mengimplementasikan proses penyimpanan transaksi utuh (pembuatan nomor invoice unik berformat `INV-YYYYMMDD-XXXX`, pengurangan stok produk, penyimpanan detail transaksi, dan halaman struk).
+
 *(Materi pertemuan selanjutnya akan ditambahkan di sini)*
 
 ---

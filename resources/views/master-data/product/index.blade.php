@@ -72,6 +72,7 @@
                                     @endif
                                 </td>
                                 <td class="px-4 py-2 text-sm text-center space-x-2">
+                                    <a href="{{ route('products.show', $product) }}" class="text-gray-600">Detail</a>
                                     <a href="{{ route('products.edit', $product) }}" class="text-indigo-600">Ubah</a>
                                     
                                     {{-- Form Hapus Produk --}}
@@ -81,7 +82,6 @@
                                             @method('DELETE')
                                         <button type="submit" class="text-red-600">Hapus</button>
                                     </form>
-
                                 </td>
                             </tr>
                         @empty

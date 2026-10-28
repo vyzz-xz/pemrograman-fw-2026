@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PosController;
 
 Route::get('/', function () {
     return view('hello'); 
@@ -49,3 +50,9 @@ Route::middleware(['auth', 'role:admin,kasir'])->group(function () {
 Route::get('/pos/history', function () {
     return 'Halaman Riwayat Transaksi';
 })->name('pos.history');
+
+Route::middleware(['auth', 'role:admin,kasir'])->group(function () {
+    Route::get('/pos', [PosController::class, 'index'])->name('pos.index');
+    Route::post('/pos', [PosController::class, 'store'])->name('pos.store');
+    Route::get('/pos/{transaction}/struk', [PosController::class, 'struk'])->name('pos.struk');
+});

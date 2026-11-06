@@ -39,20 +39,20 @@
     </div>
 
     @push('scripts')
-    <script type="module">
-        import Chart from 'chart.js/auto';
-
-        new Chart(document.getElementById('chartTren'), {
-            type: 'line',
-            data: {
-                labels: @json($labelTren),
-                datasets: [{
-                    label: 'Penjualan (Rp)',
-                    data: @json($dataTren),
-                    borderColor: '#4f46e5',
-                    tension: 0.3,
-                }],
-            },
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            new Chart(document.getElementById('chartTren'), {
+                type: 'line',
+                data: {
+                    labels: @json($labelTren),
+                    datasets: [{
+                        label: 'Penjualan (Rp)',
+                        data: @json($dataTren),
+                        borderColor: '#4f46e5',
+                        tension: 0.3,
+                    }],
+                },
+            });
         });
     </script>
     @endpush

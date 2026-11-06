@@ -80,18 +80,30 @@ Repository ini berisi dokumentasi dan hasil praktikum mata kuliah **Framework Pe
 * Membuat fitur filter data berdasarkan kategori menggunakan elemen *dropdown* `<select>` yang mempertahankan nilai pilihannya.
 * Menerapkan *Pagination* (`paginate()`) untuk membatasi jumlah baris data yang ditampilkan per halaman, serta menggunakan `withQueryString()` agar parameter pencarian dan filter tidak hilang saat pengguna berpindah halaman.
 
-### Pertemuan 11: Detail Produk dan Riwayat Penjualan per Produk
+### Pertemuan 11 - Detail Produk dan Riwayat Penjualan per Produk
 - Mengimplementasikan method `show()` pada `ProductController` menggunakan *Route Model Binding*.
 - Menambahkan relasi bertingkat (*nested relation*) menggunakan *lazy eager loading* `load(['transactionDetails.transaction'])`.
 - Menerapkan agregasi data sederhana seperti `sum('qty')` untuk menghitung total unit produk yang terjual.
 - Membuat tampilan halaman detail produk (`show.blade.php`) lengkap dengan informasi harga, stok, total terjual, dan tabel 10 riwayat transaksi terakhir.
 
-### Pertemuan 12: Transaksi Penjualan (POS) - Keranjang dan Simpan Transaksi
+### Pertemuan 12 - Transaksi Penjualan (POS) - Keranjang dan Simpan Transaksi
 - Membangun layar kasir interaktif menggunakan **Alpine.js** untuk manajemen keranjang belanja, pencarian produk instan, perhitungan total, dan kembalian secara *real-time*.
 - Membuat `PosController` dan mendaftarkan rute POS yang dilindungi oleh *middleware* hak akses.
 - Menerapkan **`DB::transaction()`** dan **`lockForUpdate()`** untuk menjamin konsistensi data serta mencegah *race condition* pada stok produk saat transaksi bersamaan.
 - Membuat `StorePosRequest` dengan validasi *wildcard* (`items.*.product_id`) untuk memvalidasi data keranjang dari sisi server.
 - Mengimplementasikan proses penyimpanan transaksi utuh (pembuatan nomor invoice unik berformat `INV-YYYYMMDD-XXXX`, pengurangan stok produk, penyimpanan detail transaksi, dan halaman struk).
+
+### Pertemuan 13 - Laporan Penjualan dan Export ke Excel
+* Membuat `ReportController` beserta rute khusus laporan yang dibatasi oleh *middleware* admin.
+* Mengimplementasikan filter laporan penjualan berdasarkan rentang tanggal (*date range*) menggunakan `whereBetween` dan library tanggal **Carbon**.
+* Menginstal dan mengonfigurasi *package* **Laravel Excel (Maatwebsite)** untuk mengekspor data laporan penjualan ke berkas `.xlsx`.
+* Membuat kelas `SalesExport` yang menerapkan *contract* `FromCollection`, `WithHeadings`, dan `WithMapping` untuk mengatur kustomisasi kolom serta baris data Excel secara presisi.
+
+### Pertemuan 14 - Dashboard Analitik, Finishing, dan Deployment
+* Menyempurnakan `DashboardController` dengan menerapkan agregasi data tingkat lanjut menggunakan `groupBy`, `selectRaw`, dan `sum` untuk mengolah omzet harian serta tren penjualan.
+* Menampilkan grafik tren penjualan 7 hari terakhir secara interaktif menggunakan library **Chart.js** dan elemen `<canvas>`.
+* Menampilkan daftar 5 produk terlaris berdasarkan akumulasi kuantitas penjualan.
+* Memahami persiapan konfigurasi *deployment* produksi (`APP_DEBUG=false`, `npm run build`, `php artisan optimize`, dan `migrate --force`).
 
 *(Materi pertemuan selanjutnya akan ditambahkan di sini)*
 
